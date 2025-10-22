@@ -7,12 +7,12 @@ from Response.GenerateResponse import GenerateResponse
 import streamlit as st
 
 def main():
-    st.title("News Summarizer and Insight Generator")
-    st.write("Ask questions about news or search for latest news")
+    st.title("🌍 Global News Intelligence Hub")
+    st.write("Powered by AI • Discover insights from world events in seconds")
 
     query = st.text_input(
-        "Enter the question or search query:",
-        placeholder = "e.g., 'What are some news on Chinese stocks'"
+        "💬 What would you like to know about current events?",
+        placeholder = "e.g., 'What's happening with energy policies in Europe?' or 'Tell me about developments in Asia'"
     )
 
     loader = ArticleLoader("data/articles.txt")
@@ -22,13 +22,13 @@ def main():
     retriever = article_retriever.create_retriever(text_chunks)
     model = article_retriever.load_model()
 
-    if st.button("Search") and query:
-        with st.spinner("Searching for relevant news...."):
+    if st.button("🔍 Analyze News", type="primary") and query:
+        with st.spinner("🤖 AI is analyzing global news sources..."):
             rag = GenerateResponse(retriever)
             rag_chain = rag.create_ragchain(model)
             response = rag.generate_relevant_text(query, rag_chain)
 
-            st.subheader("AI response")
+            st.subheader("📊 Intelligence Report")
             st.write(response)
 
 if __name__ == "__main__":

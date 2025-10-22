@@ -614,15 +614,6 @@ User Query → Retriever (gets context) → Prompt Template → LLM → Parser �
 - [Streamlit Documentation](https://docs.streamlit.io/)
 - [FAISS Documentation](https://github.com/facebookresearch/faiss)
 
-## 🤝 Contributing
-
-To extend this project:
-1. Add more document loaders (PDF, Word, etc.)
-2. Implement different embedding models
-3. Add conversation memory for follow-up questions
-4. Create evaluation metrics for response quality
-5. Add source citations to responses
-
 ---
 
 **Happy coding! 🚀**
